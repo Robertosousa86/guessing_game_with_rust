@@ -16,10 +16,10 @@ fn main() {
             .read_line(&mut guess)
             .expect("Ops... ocorreu um erro ao ler a linha.");
 
-        let guess: u32 = guess
-            .trim()
-            .parse()
-            .expect("Por favor digite apenas números.");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("Você chutou o número: {}", guess);
 

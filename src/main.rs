@@ -8,7 +8,7 @@ fn main() {
     let secret_number = rand::thread_rng().gen_range(1..101);
 
     loop {
-        println!("Por favor, digite seu palpite:");
+        println!("Por favor, digite seu palpite:\n==============================");
 
         let mut guess = String::new();
 
@@ -21,7 +21,7 @@ fn main() {
             Err(_) => continue,
         };
 
-        println!("Você chutou o número: {}", guess);
+        println!("Você chutou o número: {} \n========================", guess);
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("O número está muito abaixo!"),
